@@ -22,7 +22,7 @@ function Flashcard({ flashcard, onCorrect }) {
             onCorrect(); // Unlock next question
         } else {
             setSelectedAnswers((prev) => ({ ...prev, [option]: true }));
-            setHints((prev) => Math.min(prev + 1, 2));
+            setHints((prev) => Math.min(prev + 1, 3));
         }
     };
 
@@ -88,6 +88,7 @@ function Flashcard({ flashcard, onCorrect }) {
             {/* Display hints if applicable */}
             {hints >= 1 && <Typography variant="body2" sx={{ marginTop: 2 }}>Hint: {flashcard.hintOne}</Typography>}
             {hints >= 2 && <Typography variant="body2">Second Hint: {flashcard.hintTwo}</Typography>}
+            {hints >= 3 && <Typography variant="body2">Well there's only one choice left so... good job I guess</Typography>}
 
             {/* Show correct answer message when answered correctly */}
             {correct && (
