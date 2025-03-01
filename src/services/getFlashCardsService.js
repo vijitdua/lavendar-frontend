@@ -22,7 +22,7 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
  * @throws {Error} - Throws an error if fetching fails.
  */
 export async function getFlashcards(file, number){
-    await delay(10000); // todo: remove, only to simulate loading for now
+    // await delay(10000); // todo: remove, only to simulate loading for now
 
     return fakeData; // todo: remove, only use it for now for testing
 

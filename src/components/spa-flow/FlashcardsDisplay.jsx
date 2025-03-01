@@ -46,18 +46,16 @@ function FlashcardsDisplay({step, goToNextQuestion, flashcards}) {
                     />
 
                     {/* Next Question Button */}
-                    {currentFlashcard < flashcards.length && (
-                        <Box sx={{marginTop: "20px"}}>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                disabled={!canProceed}
-                                onClick={goToNextQuestion}
-                            >
-                                Next Question
-                            </Button>
-                        </Box>
-                    )}
+                    <Box sx={{marginTop: "20px"}}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            disabled={!canProceed}
+                            onClick={goToNextQuestion}
+                        >
+                            Next Question
+                        </Button>
+                    </Box>
                 </Container>
             </Box>
         </Container>
