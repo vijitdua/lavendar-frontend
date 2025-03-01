@@ -1,9 +1,15 @@
 import ThemeWrapper from "@/wrappers/ThemeWrapper";
+import {DialogProvider} from "@/contexts/dialogProvider";
+import {GlobalFeedbackSnackbarProvider} from "@/contexts/globalFeedbackSnackbarProvider";
 
 function enabledContextsAndWrappers({children}) {
     return (
         <ThemeWrapper>
-            {children}
+            <GlobalFeedbackSnackbarProvider>
+                <DialogProvider>
+                    {children}
+                </DialogProvider>
+            </GlobalFeedbackSnackbarProvider>
         </ThemeWrapper>
     );
 }
