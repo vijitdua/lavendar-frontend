@@ -1,14 +1,13 @@
 import {useState} from "react";
-import UploadPDF from "@/components/landing/UploadPDF";
+import UploadPDF from "@/components/spa-flow/UploadPDF";
 import {getFlashcards} from "@/services/getFlashCardsService";
-import LoadingQuestions from "@/components/landing/LoadingQuestions";
-import FailedLoading from "@/components/landing/FailedLoading";
+import LoadingQuestions from "@/components/spa-flow/LoadingQuestions";
+import FailedLoading from "@/components/spa-flow/FailedLoading";
+import FlashcardsDisplay from "@/components/spa-flow/FlashcardsDisplay";
 
 function App() {
 
-    // todo: add cute cat pics shuffling between while your flashcards are loading :3
-
-    const [step, setStep] = useState(0); // 0 is home, 1-xyz is all the questions
+    const [step, setStep] = useState(0); // 0 is home, -1 is finished, 1-xyz is all the questions
     const [loading, setLoading] = useState(false); // is loading response from backend
     const [error, setError] = useState(null); // If you have an error :(
     const [flashcards, setFlashcards] = useState([]); // Empty array of objects
@@ -36,8 +35,16 @@ function App() {
         setFlashcards([]);
     }
 
+    async function goToNextQuestion(){
+        if(flashcards.length > step) setStep(prev => prev + 1);
+        else setStep(-1);
+    }
+
     // return cases!
     switch (step) {
+        // Todo: Return case for when you are done with all flashcards :D
+        case -1:
+            return <></>
         case 0:
             return (loading) ? <LoadingQuestions/> : <UploadPDF onFileUpload={onFileUpload}/>;
         default:
@@ -47,7 +54,7 @@ function App() {
                 (flashcards === [] || error) ?
                     <FailedLoading retry={goBackToHome} error={error}/>
                     :
-                    <>return the flashcards here based on which step we are at right now</>;
+                    <FlashcardsDisplay step={step} goToNextQuestion={goToNextQuestion} flashcards={flashcards}/>;
     }
 
 }
