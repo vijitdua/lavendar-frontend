@@ -49,7 +49,7 @@ function App() {
     // return cases!
     switch (step) {
         case -1:
-            return <FinishedSession/>
+            return <FinishedSession retry={goBackToHome}/>
         case 0:
             return (loading) ? <LoadingQuestions/> :
                 <UploadPDF onFileUpload={onFileUpload} numQuestionsRequested={numQuestionsRequested}

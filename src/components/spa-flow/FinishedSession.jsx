@@ -1,8 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 
-function FinishedSession() {
+function FinishedSession({ retry }) {
     const topMarginVH = 15; // Space below the margin where to start
 
     // Cat GIFs list
@@ -72,6 +72,7 @@ function FinishedSession() {
                             borderRadius: "8px",
                             padding: "20px",
                             marginTop: "20px",
+                            marginBottom: "20px",
                             textAlign: "center",
                             position: "relative",
                         }}
@@ -98,6 +99,15 @@ function FinishedSession() {
                         <Typography variant="body1" sx={{ marginTop: 2 }}>
                             You've successfully completed your study session!
                         </Typography>
+
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={retry}
+                            sx={{ mt: 2 }}
+                        >
+                            Start New Session
+                        </Button>
                     </Box>
                 </Container>
             </Box>
