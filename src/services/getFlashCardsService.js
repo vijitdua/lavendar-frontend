@@ -33,7 +33,9 @@ export async function getFlashcards(file, number) {
         if (!response.data.success || response.data.error) {
             throw new Error(response.data.error || "Failed to fetch flashcards.");
         }
-
+        
+        console.log("API Resp:", response.data);
+        
         return response.data.questions;
 
     } catch (error) {

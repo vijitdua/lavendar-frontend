@@ -68,9 +68,9 @@ For Windows users, adapt the commands accordingly.
   git clone [Frontend Repository URL]
   cd [Frontend Repository Folder]
   ```
-- Copy the `.env.example` file to `.env` and configure it:
+- Copy the `.env.sample` file to `.env` and configure it:
   ```bash
-  cp .env.example .env
+  cp .env.sample .env
   ```
   **Set the correct backend server URL inside `.env`**.
 
