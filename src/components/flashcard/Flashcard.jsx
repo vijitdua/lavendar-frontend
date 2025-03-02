@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import {Box, Typography, useTheme} from "@mui/material";
 
 function Flashcard({ flashcard, onCorrect }) {
     const [selectedAnswers, setSelectedAnswers] = useState({});
     const [hints, setHints] = useState(0);
     const [correct, setCorrect] = useState(false);
+
+    const theme = useTheme();
 
     // Reset states when a new flashcard is shown
     useEffect(() => {
@@ -33,8 +35,11 @@ function Flashcard({ flashcard, onCorrect }) {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "2px dashed #ccc",
+                border: `2px dashed ${theme.palette.primary.main}`,
                 borderRadius: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.075)",
+                backdropFilter: "blur(8px)",
+                transition: "all 0.3s ease-in-out",
                 padding: "20px",
                 marginTop: "20px",
                 textAlign: "center",
@@ -47,7 +52,7 @@ function Flashcard({ flashcard, onCorrect }) {
             </Typography>
 
             {/* Answer options in a 2x2 grid */}
-            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, width: "100%" }}>
+            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, width: "100%", ml: '4rem'}}>
                 {["A", "B", "C", "D"].map((key) => (
                     <Box
                         key={key}
@@ -56,7 +61,7 @@ function Flashcard({ flashcard, onCorrect }) {
                             alignItems: "center",
                             padding: "10px",
                             cursor: correct ? "default" : "pointer",
-                            opacity: correct || selectedAnswers[key] ? 0.5 : 1, // Fade out all unselected options once correct
+                            opacity: selectedAnswers[key] && key !== flashcard.correctAnswer ? 0.5 : correct && key !== flashcard.correctAnswer ? 0.5 : 1, // Fade out incorrect answers when selected
                             transition: "opacity 0.3s",
                         }}
                         onClick={() => handleAnswerClick(key)}
@@ -86,9 +91,11 @@ function Flashcard({ flashcard, onCorrect }) {
             </Box>
 
             {/* Display hints if applicable */}
+            <Box sx={{mt: '1rem', '& > *': {mt: '1rem'}}}>
             {hints >= 1 && <Typography variant="body2" sx={{ marginTop: 2 }}>Hint: {flashcard.hintOne}</Typography>}
-            {hints >= 2 && <Typography variant="body2">Second Hint: {flashcard.hintTwo}</Typography>}
+            {hints >= 2 && <Typography variant="body2">Hint 2: {flashcard.hintTwo}</Typography>}
             {hints >= 3 && <Typography variant="body2">Well there's only one choice left so... good job I guess</Typography>}
+            </Box>
 
             {/* Show correct answer message when answered correctly */}
             {correct && (

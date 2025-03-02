@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import UploadPDF from "@/components/spa-flow/UploadPDF";
 import {getFlashcards} from "@/services/getFlashCardsService";
 import LoadingQuestions from "@/components/spa-flow/LoadingQuestions";
@@ -12,6 +12,10 @@ function App() {
     const [error, setError] = useState(null); // If you have an error :(
     const [flashcards, setFlashcards] = useState([]); // Empty array of objects
 
+    // Go to finished stage if finished
+    useEffect(() => {
+        if(!loading && step >= flashcards.length && flashcards.length > 0) setStep(-1);
+    }, [step])
 
     async function onFileUpload(file) {
         setLoading(true);
@@ -44,7 +48,7 @@ function App() {
     switch (step) {
         // Todo: Return case for when you are done with all flashcards :D
         case -1:
-            return <></>
+            return <>Finished with questions return case (TODO)</>
         case 0:
             return (loading) ? <LoadingQuestions/> : <UploadPDF onFileUpload={onFileUpload}/>;
         default:

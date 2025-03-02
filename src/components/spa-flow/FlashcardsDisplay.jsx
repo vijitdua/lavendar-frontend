@@ -78,7 +78,7 @@ function FlashcardsDisplay({step, goToNextQuestion, flashcards}) {
                     />
 
                     {/* Next Question Button */}
-                    <Box sx={{marginTop: "20px"}}>
+                    <Box sx={{display: "flex", flexDirection: 'row', marginTop: "20px", justifyContent: "flex-end"}}>
                         <Button
                             variant="contained"
                             color="primary"
