@@ -26,7 +26,12 @@ reinforce learning through interactive testing.
 
 ## **📸 Preview**
 
-- todo: add images
+- <img width="500" alt="Screenshot 2025-03-01 at 9 11 08 PM" src="https://github.com/user-attachments/assets/f3329b1b-b3eb-473e-9706-f9d0267628ce" />
+- <img width="500" alt="Screenshot 2025-03-01 at 9 11 18 PM" src="https://github.com/user-attachments/assets/9dca947a-dcfe-43ca-8a60-35d2d098f580" />
+- <img width="500" alt="Screenshot 2025-03-01 at 9 11 32 PM" src="https://github.com/user-attachments/assets/d5612f7b-2e5b-4434-a4b8-11be26a6d048" />
+- <img width="500" alt="Screenshot 2025-03-01 at 9 11 39 PM" src="https://github.com/user-attachments/assets/9bbab4e1-25de-4cc2-b9e5-1aaf5546dd67" />
+- <img width="500" alt="Screenshot 2025-03-01 at 9 11 46 PM" src="https://github.com/user-attachments/assets/17df6570-cb94-4b72-a4b5-bee616c63557" />
+- <img width="500" alt="Screenshot 2025-03-01 at 9 12 08 PM" src="https://github.com/user-attachments/assets/cf3d1446-e184-459f-bd33-b83b9c0cc626" />
 
 ---
 
