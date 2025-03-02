@@ -1,40 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# **Lavender** - Sac Hacks VI (2025)
 
-## Getting Started
+---
 
-First, run the development server:
+## **🚀 Elevator Pitch**
+
+**Turn your notes into quizzes with AI and test your knowledge!**  
+Lavender helps students and professionals **convert their lecture slides, notes, or PDFs into AI-generated quizzes** to
+reinforce learning through interactive testing.
+
+---
+
+> **Note:** This repository contains only the frontend.  
+> The backend is repository is located [lavender-backend](https://github.com/ehsaanisme/lavendar-backend), and the
+> frontend requires the backend to be running.  
+> Please refer to the backend repository for setup instructions.
+
+---
+
+## **🔧 Built With**
+
+- **Frontend**: Next.js, React.js, Material UI
+- **Backend**: Express.js, Node.js, Multer (for file uploads), OpenAI API, PDF.js
+
+---
+
+## **📸 Preview**
+
+- todo: add images
+
+---
+
+## **🛠 Tech Stack**
+
+### **Frontend**
+
+- **Next.js** (Server-side rendering & routing)
+- **React.js** (Component-based UI)
+- **Material UI** (Styling & UI components)
+
+### **Backend**
+
+*(Refer to the [lavender-backend](https://github.com/ehsaanisme/lavendar-backend) for full details)*
+
+- **Express.js** (REST API)
+- **Node.js** (Backend runtime)
+- **Multer** (File upload handling)
+- **PDF.js** (Parsing and processing PDFs)
+- **OpenAI API** (Generating quiz questions from notes)
+
+---
+
+## **💻 Run Locally**
+
+This guide assumes you are running on a Unix-based machine (Linux or macOS).  
+For Windows users, adapt the commands accordingly.
+
+### **Prerequisites**
+
+- Install **Node.js** and **npm**
+- Clone this repository:
+  ```bash
+  git clone [Frontend Repository URL]
+  cd [Frontend Repository Folder]
+  ```
+- Copy the `.env.example` file to `.env` and configure it:
+  ```bash
+  cp .env.example .env
+  ```
+  **Set the correct backend server URL inside `.env`**.
+
+---
+
+### **🚀 Frontend Setup**
+
+#### **Run with npm**
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This starts the frontend on **http://localhost:3000/**.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+> **Note:** The backend must be running before launching the frontend.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## **👨‍💻 Developed By**
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Vijit Dua](https://vijitdua.com/)**
+    - **Frontend:** Everything.
+    - **Backend:** Repository initialization and setup.
 
-## Learn More
+- **[Ehsaan Mohammed](https://github.com/ehsaanisme)**
+    - **Backend:** Worked on the LLM Integration.
 
-To learn more about Next.js, take a look at the following resources:
+- **[Alex Zhu Zhou](https://alexzhuzhou.github.io/AlexWebsite/)**
+    - **Backend:** Worked on setting up the server and client requests.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **[Taha Abdullah](https://github.com/tmabdull)**
+    - **Backend:** Worked on the pdf parser and integration with the backend pdfController.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
