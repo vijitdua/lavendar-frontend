@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import {Box, Typography, useTheme} from "@mui/material";
 
-function Flashcard({ flashcard, onCorrect }) {
+function Flashcard({flashcard, onCorrect}) {
     const [selectedAnswers, setSelectedAnswers] = useState({});
     const [hints, setHints] = useState(0);
     const [correct, setCorrect] = useState(false);
@@ -20,10 +20,10 @@ function Flashcard({ flashcard, onCorrect }) {
 
         if (option === flashcard.correctAnswer) {
             setCorrect(true);
-            setSelectedAnswers({ ...selectedAnswers, [option]: true }); // Keep only correct selected
+            setSelectedAnswers({...selectedAnswers, [option]: true}); // Keep only correct selected
             onCorrect(); // Unlock next question
         } else {
-            setSelectedAnswers((prev) => ({ ...prev, [option]: true }));
+            setSelectedAnswers((prev) => ({...prev, [option]: true}));
             setHints((prev) => Math.min(prev + 1, 3));
         }
     };
@@ -52,7 +52,7 @@ function Flashcard({ flashcard, onCorrect }) {
             </Typography>
 
             {/* Answer options in a 2x2 grid */}
-            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, width: "100%"}}>
+            <Box sx={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, width: "100%"}}>
                 {["A", "B", "C", "D"].map((key) => (
                     <Box
                         key={key}
@@ -83,23 +83,26 @@ function Flashcard({ flashcard, onCorrect }) {
                             }}
                         />
                         {/* Answer Text */}
-                        <Typography variant="body1">
-                            {key}. {flashcard[`option${key}`]}
-                        </Typography>
+                        <Box sx={{maxWidth: '15rem'}}>
+                            <Typography variant="body1">
+                                {key}. {flashcard[`option${key}`]}
+                            </Typography>
+                        </Box>
                     </Box>
                 ))}
             </Box>
 
             {/* Display hints if applicable */}
             <Box sx={{mt: '1rem', '& > *': {mt: '1rem'}}}>
-            {hints >= 1 && <Typography variant="body2" sx={{ marginTop: 2 }}>Hint: {flashcard.hintOne}</Typography>}
-            {hints >= 2 && <Typography variant="body2">Hint 2: {flashcard.hintTwo}</Typography>}
-            {hints >= 3 && <Typography variant="body2">Well there's only one choice left so... good job I guess</Typography>}
+                {hints >= 1 && <Typography variant="body2" sx={{marginTop: 2}}>Hint: {flashcard.hintOne}</Typography>}
+                {hints >= 2 && <Typography variant="body2">Hint 2: {flashcard.hintTwo}</Typography>}
+                {hints >= 3 &&
+                    <Typography variant="body2">Well there's only one choice left so... good job I guess</Typography>}
             </Box>
 
             {/* Show correct answer message when answered correctly */}
             {correct && (
-                <Typography variant="body2" sx={{ marginTop: 2, color: "green" }}>
+                <Typography variant="body2" sx={{marginTop: 2, color: "green"}}>
                     ✅ The correct answer is {flashcard.correctAnswer}: {flashcard[`option${flashcard.correctAnswer}`]}!
                 </Typography>
             )}

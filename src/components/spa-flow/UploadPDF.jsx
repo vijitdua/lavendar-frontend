@@ -1,9 +1,9 @@
 import {Container} from "@mui/system";
-import {Box, Typography} from "@mui/material";
+import {Box, Slider, Typography} from "@mui/material";
 import PdfDropBox from "@/components/input/PdfDropBox";
 
-function UploadPDF({onFileUpload}) {
-    const topMarginVH = 25; // Space below the margin where to start
+function UploadPDF({onFileUpload, numQuestionsRequested, setNumQuestionsRequested}) {
+    const topMarginVH = 20; // Space below the margin where to start
     return (
         <Container maxWidth="md">
 
@@ -22,10 +22,16 @@ function UploadPDF({onFileUpload}) {
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'space-between',
+                        mb: '3rem',
                     }}>
-                        <Typography variant="h2" gutterBottom>
-                            Lavender
-                        </Typography>
+                        <Box>
+                            <Typography variant="h2" gutterBottom>
+                                Lavender
+                            </Typography>
+                            <Typography variant="h6" sx={{color: "gray"}}>
+                                Turn your notes into quizzes and test your knowledge!
+                            </Typography>
+                        </Box>
                         <Box
                             component="img"
                             sx={{
@@ -34,6 +40,23 @@ function UploadPDF({onFileUpload}) {
                             }}
                             alt="Lavender logo"
                             src="/lavender.png"
+                        />
+                    </Box>
+
+                    {/* Slider for selecting the number of questions */}
+                    <Box sx={{width: "100%", marginBottom: 2}}>
+                        <Typography gutterBottom>
+                            Number of Questions: {numQuestionsRequested}
+                        </Typography>
+                        <Slider
+                            value={numQuestionsRequested}
+                            onChange={(event, newValue) => setNumQuestionsRequested(newValue)}
+                            min={5}
+                            max={30}
+                            step={1}
+                            marks
+                            valueLabelDisplay="auto"
+                            sx={{color: "primary.main"}}
                         />
                     </Box>
 

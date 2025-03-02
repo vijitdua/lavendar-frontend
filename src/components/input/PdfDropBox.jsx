@@ -76,7 +76,7 @@ function PdfDropBox({ onFileUpload }) {
             />
             <CloudUploadIcon sx={{ fontSize: 50, color: "primary.main" }} />
             <Typography variant="h6" color="text.primary" sx={{ mt: 2 }}>
-                {fileName ? fileName : "Drag & Drop a PDF here or Click to Upload"}
+                {fileName ? fileName : "Drag & Drop your notes / lecture slides or click to upload"}
             </Typography>
             <Button
                 variant="contained"
