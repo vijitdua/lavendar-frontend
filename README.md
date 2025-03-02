@@ -2,6 +2,10 @@
 
 ---
 
+[DevPost Submission](https://youtu.be/EyVQDNdSm0s?si=nhHbpwWkryBS2mt1)
+
+---
+
 ## **🚀 Elevator Pitch**
 
 **Turn your notes into quizzes with AI and test your knowledge!**  
@@ -92,6 +96,8 @@ This starts the frontend on **http://localhost:3000/**.
 ---
 
 ## **👨‍💻 Developed By**
+
+The [Launch Davis](https://launchdavis.com) Team
 
 - **[Vijit Dua](https://vijitdua.com/)**
     - **Frontend:** Everything.
