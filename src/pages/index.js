@@ -4,6 +4,7 @@ import {getFlashcards} from "@/services/getFlashCardsService";
 import LoadingQuestions from "@/components/spa-flow/LoadingQuestions";
 import FailedLoading from "@/components/spa-flow/FailedLoading";
 import FlashcardsDisplay from "@/components/spa-flow/FlashcardsDisplay";
+import FinishedSession from "@/components/spa-flow/FinishedSession";
 
 function App() {
 
@@ -46,9 +47,8 @@ function App() {
 
     // return cases!
     switch (step) {
-        // Todo: Return case for when you are done with all flashcards :D
         case -1:
-            return <>Finished with questions return case (TODO)</>
+            return <FinishedSession/>
         case 0:
             return (loading) ? <LoadingQuestions/> : <UploadPDF onFileUpload={onFileUpload}/>;
         default:
