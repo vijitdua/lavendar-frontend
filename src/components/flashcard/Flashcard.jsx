@@ -52,7 +52,7 @@ function Flashcard({ flashcard, onCorrect }) {
             </Typography>
 
             {/* Answer options in a 2x2 grid */}
-            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, width: "100%", ml: '4rem'}}>
+            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, width: "100%"}}>
                 {["A", "B", "C", "D"].map((key) => (
                     <Box
                         key={key}
@@ -69,8 +69,8 @@ function Flashcard({ flashcard, onCorrect }) {
                         {/* Circle indicator */}
                         <Box
                             sx={{
-                                width: 20,
-                                height: 20,
+                                width: `20px`,
+                                height: `20px`,
                                 borderRadius: "50%",
                                 border: `2px solid ${correct && key === flashcard.correctAnswer ? "green" : "#000"}`,
                                 display: "flex",
